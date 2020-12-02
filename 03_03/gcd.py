@@ -9,7 +9,12 @@ sys.path.append("..")  # Adds higher directory to python modules path.
 
 
 def gcd_recursive(a, b):
-    pass
+    if b == 0:
+        # Base case
+        return a
+    else:
+        # Recursive case
+        return gcd_recursive(b, a % b)
 
 
 gcd_recursive = trace(gcd_recursive)
