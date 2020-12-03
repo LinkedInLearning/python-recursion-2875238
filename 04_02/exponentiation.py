@@ -5,11 +5,17 @@ Robin Andrews - https://compucademy.net/
 
 
 def exp_iterative(a, n):
-    pass
+    base = a
+    for i in range(n - 1):
+        a *= base
+    return a
 
 
 def exp_recursive(a, n):
-    pass
+    if n == 1:
+        return a
+    else:
+        return exp_recursive(a, n - 1) * a
 
 
 assert exp_iterative(5, 3) == 125
