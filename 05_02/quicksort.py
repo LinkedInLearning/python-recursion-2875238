@@ -10,7 +10,13 @@ from trace_recursion import trace
 
 
 def quicksort(arr):
-    pass
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
 
 
 def quicksort_verbose(arr):
@@ -30,7 +36,7 @@ def quicksort_verbose(arr):
     return to_return
 
 
-data = [5, 2, 6, 1]
+# data = [5, 2, 6, 1]
 # print(quicksort(data))
 # print(quicksort_verbose(data))
 
@@ -39,9 +45,9 @@ data = [5, 2, 6, 1]
 #
 
 # What about data with duplicates?
-# data = [1, 6, 5, 5, 2, 6, 1]
-# print(quicksort(data))
+data = [1, 6, 5, 5, 2, 6, 1]
+print(quicksort(data))
 
 # for challenge
-data = [5, 4, 3, 2, 1]
-print(quicksort_verbose(data))
+# data = [5, 4, 3, 2, 1]
+# print(quicksort_verbose(data))
