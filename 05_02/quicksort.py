@@ -45,9 +45,9 @@ def quicksort_verbose(arr):
 #
 
 # What about data with duplicates?
-data = [1, 6, 5, 5, 2, 6, 1]
-print(quicksort(data))
+# data = [1, 6, 5, 5, 2, 6, 1]
+# print(quicksort(data))
 
 # for challenge
-# data = [5, 4, 3, 2, 1]
-# print(quicksort_verbose(data))
+data = [5, 4, 3, 2, 1]
+print(quicksort_verbose(data))
