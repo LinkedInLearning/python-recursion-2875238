@@ -4,7 +4,7 @@ Robin Andrews - https://compucademy.net/
 """
 
 
-class Node(object):
+class Node:
     pass
 
 
