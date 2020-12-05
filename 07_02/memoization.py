@@ -28,22 +28,30 @@ def fib_lru(n):
 
 # Manual caching using a dictionary.
 def fib_cache(n, cache=None):
-    pass
+    if cache is None:
+        cache = {}
+    if n in cache:
+        return cache[n]
+    if n == 0 or n == 1:
+        return n
+    result = fib_cache(n - 1, cache) + fib_cache(n - 2, cache)
+    cache[n] = result
+    return result
 
 
-n = 20
+n = 900
 
-start = time.perf_counter()
-fib(n)
-end = time.perf_counter()
-print("Plain recursive version. Seconds taken: {:.7f}".format(end - start))
+# start = time.perf_counter()
+# fib(n)
+# end = time.perf_counter()
+# print("Plain recursive version. Seconds taken: {:.7f}".format(end - start))
 #
 # start = time.perf_counter()
 # fib_lru(n)
 # end = time.perf_counter()
 # print("lru cache version. Seconds taken: {:.7f}".format(end - start))
 #
-# start = time.perf_counter()
-# fib_cache(n)
-# end = time.perf_counter()
-# print("Manual cache version. Seconds taken: {:.7f}".format(end - start))
+start = time.perf_counter()
+fib_cache(n)
+end = time.perf_counter()
+print("Manual cache version. Seconds taken: {:.7f}".format(end - start))
