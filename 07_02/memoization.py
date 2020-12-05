@@ -31,19 +31,19 @@ def fib_cache(n, cache=None):
     pass
 
 
-n = 900
+n = 20
 
-# start = time.perf_counter()
-# fib(n)
-# end = time.perf_counter()
-# print("Plain recursive version. Seconds taken: {:.7f}".format(end - start))
+start = time.perf_counter()
+fib(n)
+end = time.perf_counter()
+print("Plain recursive version. Seconds taken: {:.7f}".format(end - start))
 #
 # start = time.perf_counter()
 # fib_lru(n)
 # end = time.perf_counter()
 # print("lru cache version. Seconds taken: {:.7f}".format(end - start))
 #
-start = time.perf_counter()
-fib_cache(n)
-end = time.perf_counter()
-print("Manual cache version. Seconds taken: {:.7f}".format(end - start))
+# start = time.perf_counter()
+# fib_cache(n)
+# end = time.perf_counter()
+# print("Manual cache version. Seconds taken: {:.7f}".format(end - start))
