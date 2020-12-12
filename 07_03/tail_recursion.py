@@ -16,7 +16,10 @@ def factorial(n):
 
 def tail_factorial_attempt(n, accumulator=1):
     print("Attempted tail optimised stack size: ", len(inspect.stack(0)))
-    pass
+    if n == 0:
+        return accumulator
+    else:
+        return tail_factorial_attempt(n - 1, accumulator * n)
 
 
 if __name__ == "__main__":
