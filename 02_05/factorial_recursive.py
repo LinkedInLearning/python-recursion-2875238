@@ -3,9 +3,8 @@ Python Recursion Video Course
 Robin Andrews - https://compucademy.net/
 """
 import sys
+sys.path.insert(0, './')
 from trace_recursion import trace
-
-sys.path.append("..")  # Adds higher directory to python modules path.
 
 
 def factorial(n):
