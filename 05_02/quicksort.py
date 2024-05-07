@@ -2,10 +2,8 @@
 Python Recursion Video Course
 Robin Andrews - https://compucademy.net/
 """
-
 import sys
-
-sys.path.append("..")  # Adds higher directory to python modules path.
+sys.path.insert(0, './')
 from trace_recursion import trace
 
 
