@@ -19,4 +19,4 @@ def factorial(n):
 
 
 factorial = trace(factorial)
-print(factorial(5))
+factorial(5)

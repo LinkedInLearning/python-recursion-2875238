@@ -28,7 +28,15 @@ def fib_lru(n):
 
 # Manual caching using a dictionary.
 def fib_cache(n, cache=None):
-    pass
+    if cache is None:
+        cache = {}
+    if n in cache:
+        return cache[n]
+    if n == 0 or n == 1:
+        return n
+    result = fib_cache(n - 1, cache) + fib_cache(n - 2, cache)
+    cache[n] = result
+    return result
 
 
 n = 900

@@ -12,8 +12,12 @@ def fibonacci_iterative(n):
 
 
 def fibonacci_recursive(n):
-    pass
+    if n < 2:
+        return n
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
 
 print(fibonacci_iterative(6))
 print(fibonacci_recursive(6))
+
+

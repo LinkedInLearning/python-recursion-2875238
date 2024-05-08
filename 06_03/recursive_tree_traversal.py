@@ -4,23 +4,38 @@ Robin Andrews - https://compucademy.net/
 """
 
 
-class Node(object):
-    pass
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
 
 
 def preorder_print(root, path=""):
     """Root->Left->Right"""
-    pass
+    if root:
+        path += str(root.data) + "-"
+        path = preorder_print(root.left, path)
+        path = preorder_print(root.right, path)
+    return path
 
 
 def inorder_print(root, path=""):
     """Left->Root->Right"""
-    pass
+    if root:
+        path = inorder_print(root.left, path)
+        path += str(root.data) + "-"
+        path = inorder_print(root.right, path)
+    return path
 
 
 def postorder_print(root, path=""):
     """Left->Right->Root"""
-    pass
+    if root:
+        path = postorder_print(root.left, path)
+        path = postorder_print(root.right, path)
+        path += str(root.data) + "-"
+    return path
 
 
 if __name__ == '__main__':
